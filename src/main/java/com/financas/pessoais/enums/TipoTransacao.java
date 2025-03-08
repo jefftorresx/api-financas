@@ -1,4 +1,4 @@
-package com.financas.pessoais.model;
+package com.financas.pessoais.enums;
 
 public enum TipoTransacao {
     RECEITA,
