@@ -1,16 +1,10 @@
 package com.financas.pessoais.model;
 
+import com.financas.pessoais.enums.TipoTransacao;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Entity
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
+
 public class Transacao {
 
     @Id
@@ -29,4 +23,63 @@ public class Transacao {
 
     @ManyToOne(fetch = FetchType.LAZY)
     private Categoria categoria;
+
+    public Transacao() {
+    }
+
+    public Transacao(TipoTransacao tipoTransacao, Double valor, String descricao, Usuario usuario, Categoria categoria) {
+        this.tipoTransacao = tipoTransacao;
+        this.valor = valor;
+        this.descricao = descricao;
+        this.usuario = usuario;
+        this.categoria = categoria;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public TipoTransacao getTipoTransacao() {
+        return tipoTransacao;
+    }
+
+    public void setTipoTransacao(TipoTransacao tipoTransacao) {
+        this.tipoTransacao = tipoTransacao;
+    }
+
+    public Double getValor() {
+        return valor;
+    }
+
+    public void setValor(Double valor) {
+        this.valor = valor;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
 }
