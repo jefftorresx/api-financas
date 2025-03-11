@@ -2,11 +2,8 @@ package com.financas.pessoais.model;
 
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -17,9 +14,16 @@ public class Usuario {
     private Long id;
     private String nome;
     private String email;
+
+    @Column(length = 100, nullable = false)
     private String senha;
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true,fetch = FetchType.LAZY)
     private List<Transacao> transacoes;
+
+    @ElementCollection(fetch = FetchType.EAGER)
+    @CollectionTable(name = "tab_user_roles", joinColumns = @JoinColumn(name = "user_id"))
+    @Column(name = "role_id")
+    private List<String> roles = new ArrayList<>();
 
     public Usuario() {
     }
@@ -75,5 +79,9 @@ public class Usuario {
 
     public void setTransacoes(List<Transacao> transacoes) {
         this.transacoes = transacoes;
+    }
+
+    public List<String> getRoles() {
+        return roles;
     }
 }
