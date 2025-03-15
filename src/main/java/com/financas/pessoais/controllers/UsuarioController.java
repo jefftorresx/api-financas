@@ -1,9 +1,9 @@
 package com.financas.pessoais.controllers;
 
 
-import com.financas.pessoais.DTO.UsuarioDTO;
-import com.financas.pessoais.DTO.UsuarioRespondeDTO;
-import com.financas.pessoais.service.UsuarioService;
+import com.financas.pessoais.dtos.usuario.UsuarioDTO;
+import com.financas.pessoais.dtos.usuario.UsuarioRespondeDTO;
+import com.financas.pessoais.services.usuario.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,15 +13,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("auth")
-public class AuthController {
+@RequestMapping("api")
+public class UsuarioController {
 
     @Autowired
     private UsuarioService usuarioService;
 
     @PostMapping("cadastro")
     public ResponseEntity<UsuarioRespondeDTO> cadastrar(@RequestBody UsuarioDTO usuarioDTO) {
-        UsuarioRespondeDTO usuarioRespondeDTO = usuarioService.cadastrarUsuario(usuarioDTO);
+      UsuarioRespondeDTO usuarioRespondeDTO = usuarioService.cadastrarUsuario(usuarioDTO);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(usuarioRespondeDTO);
     }

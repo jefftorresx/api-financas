@@ -1,6 +1,8 @@
-package com.financas.pessoais.model;
+package com.financas.pessoais.domain.transacao.model;
 
 import com.financas.pessoais.enums.TipoTransacao;
+import com.financas.pessoais.domain.categoria.model.Categoria;
+import com.financas.pessoais.domain.usuario.model.Usuario;
 import jakarta.persistence.*;
 
 @Entity

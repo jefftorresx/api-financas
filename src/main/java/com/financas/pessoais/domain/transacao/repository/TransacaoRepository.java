@@ -1,6 +1,6 @@
-package com.financas.pessoais.repository;
+package com.financas.pessoais.domain.transacao.repository;
 
-import com.financas.pessoais.model.Transacao;
+import com.financas.pessoais.domain.transacao.model.Transacao;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

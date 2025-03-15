@@ -1,4 +1,4 @@
-package com.financas.pessoais.DTO;
+package com.financas.pessoais.dtos.usuario;
 
 public record UsuarioDTO( String nome, String email, String senha) {
 

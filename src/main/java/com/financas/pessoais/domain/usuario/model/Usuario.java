@@ -1,6 +1,7 @@
-package com.financas.pessoais.model;
+package com.financas.pessoais.domain.usuario.model;
 
 
+import com.financas.pessoais.domain.transacao.model.Transacao;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;

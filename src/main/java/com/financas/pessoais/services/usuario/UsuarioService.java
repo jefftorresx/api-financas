@@ -1,12 +1,12 @@
-package com.financas.pessoais.service;
+package com.financas.pessoais.services.usuario;
 
 
-import com.financas.pessoais.DTO.UsuarioDTO;
-import com.financas.pessoais.DTO.UsuarioRespondeDTO;
-import com.financas.pessoais.excecoes.CadastroUsuarioException;
-import com.financas.pessoais.excecoes.UsuarioJaExisteException;
-import com.financas.pessoais.model.Usuario;
-import com.financas.pessoais.repository.UsuarioRepository;
+import com.financas.pessoais.dtos.usuario.UsuarioDTO;
+import com.financas.pessoais.dtos.usuario.UsuarioRespondeDTO;
+import com.financas.pessoais.exception.CadastroUsuarioException;
+import com.financas.pessoais.exception.UsuarioJaExisteException;
+import com.financas.pessoais.domain.usuario.model.Usuario;
+import com.financas.pessoais.domain.usuario.repository.UsuarioRepository;
 import io.micrometer.common.util.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;

@@ -1,4 +1,4 @@
-package com.financas.pessoais.excecoes;
+package com.financas.pessoais.exception;
 
 public class UsuarioJaExisteException extends RuntimeException {
     public UsuarioJaExisteException(String mensagem) {

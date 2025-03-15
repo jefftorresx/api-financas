@@ -1,4 +1,4 @@
-package com.financas.pessoais.model;
+package com.financas.pessoais.domain.categoria.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

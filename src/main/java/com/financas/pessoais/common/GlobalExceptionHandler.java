@@ -1,8 +1,7 @@
-package com.financas.pessoais.controllers;
+package com.financas.pessoais.common;
 
-import com.financas.pessoais.excecoes.CadastroUsuarioException;
-import com.financas.pessoais.excecoes.ExceptionResponse;
-import com.financas.pessoais.excecoes.UsuarioJaExisteException;
+import com.financas.pessoais.exception.CadastroUsuarioException;
+import com.financas.pessoais.exception.UsuarioJaExisteException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;

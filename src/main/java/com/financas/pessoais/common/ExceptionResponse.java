@@ -1,4 +1,4 @@
-package com.financas.pessoais.excecoes;
+package com.financas.pessoais.common;
 
 
 import org.springframework.http.HttpStatus;
