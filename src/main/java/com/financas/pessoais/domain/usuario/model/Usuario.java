@@ -21,10 +21,13 @@ public class Usuario {
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true,fetch = FetchType.LAZY)
     private List<Transacao> transacoes;
 
-    @ElementCollection(fetch = FetchType.EAGER)
-    @CollectionTable(name = "tab_user_roles", joinColumns = @JoinColumn(name = "user_id"))
-    @Column(name = "role_id")
-    private List<String> roles = new ArrayList<>();
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "usuario_role",
+            joinColumns = @JoinColumn(name = "usuario_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id")
+    )
+    private List<Role> roles = new ArrayList<>();
 
     public Usuario() {
     }
@@ -82,7 +85,7 @@ public class Usuario {
         this.transacoes = transacoes;
     }
 
-    public List<String> getRoles() {
+    public List<Role> getRoles() {
         return roles;
     }
 }
